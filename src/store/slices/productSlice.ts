@@ -16,11 +16,13 @@ export type ProductType = {
 
 
 type InitialState = {
-    productList: ProductType[]
+    productList: ProductType[];
+    selectedProduct?: ProductType | undefined;
 }
 
 const initialState: InitialState = {
-    productList: []
+    productList: [],
+    selectedProduct: undefined
 }
 
 export const productSlice = createSlice({
@@ -29,12 +31,19 @@ export const productSlice = createSlice({
     reducers: {
         setProducts: (state, action: PayloadAction<ProductType[]>) => {
             state.productList = action.payload
-        }
+        },
+        setSelectedProduct: (state, action: PayloadAction<ProductType>) => {
+            state.selectedProduct = action.payload
+        },
     },
 })
 
-export const { setProducts } = productSlice.actions
+export const {
+    setProducts,
+    setSelectedProduct
+} = productSlice.actions
 
 export const getProducts = (state: RootState) => state.product.productList
+export const getSelectedProduct = (state: RootState) => state.product.selectedProduct
 
 export default productSlice.reducer
