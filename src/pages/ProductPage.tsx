@@ -3,6 +3,7 @@ import { ProductType, getProducts, setProducts } from '../store/slices/productSl
 import { useDispatch, useSelector } from 'react-redux'
 import Product from '../components/product/Product'
 import { useParams } from 'react-router-dom'
+import Filter from '../components/filter/Filter'
 
 type ProductPageProps = {}
 
@@ -37,12 +38,12 @@ const ProductPage: React.FC<ProductPageProps> = (props) => {
     else
       loadProducts();
   }, [category])
-
+  console.log(products.slice(0, 10))
 
   return (
     <div className='flex'>
       <aside className='basis-1/4'>
-        Filter
+        <Filter />
       </aside>
       <div className='flex basis-3/4 flex-row justify-start sm:flex-wrap'>
         {products.map((product: ProductType, index: number) => {

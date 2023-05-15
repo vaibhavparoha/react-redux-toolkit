@@ -56,7 +56,10 @@ function ProductDetailsPage(props: Props) {
         navigate('/cart')
     }
     return (
-        <div className='flex justify-center mt-2'>
+        <div className='flex justify-center mt-2 font-poppins'>
+
+
+
             <div className="flex body-font font-poppins">
                 <div className="flex-none w-52 relative">
                     <img src={selectedProduct?.image} alt="" className="absolute inset-0 w-full h-full object-fill rounded-lg" loading="lazy" />
@@ -130,7 +133,7 @@ function ProductDetailsPage(props: Props) {
                         Free shipping on all continental US orders.
                     </p>
                 </form>
-                <div className="w-1/4 flex-auto text-lg font-normal text-slate-500 ml-20">
+                <div className="w-1/4 flex-auto text-md font-normal text-slate-500 ml-20">
                     {selectedProduct?.description}
                 </div>
             </div>

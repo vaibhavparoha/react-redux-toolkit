@@ -1,11 +1,13 @@
 import React from 'react'
 import { ProductType } from '../../store/slices/productSlice'
 import { useNavigate } from "react-router-dom";
+
 const Product: React.FC<ProductType> = ({ title, image, id, price }) => {
     const navigate = useNavigate();
     const showDetails = () => {
         navigate(`/products/${id}`);
     }
+
 
     return (
         <div className='font-poppins flex flex-col basis-1/4 items-center my-5 mb-10 shadow-lg justify-between p-5' onClick={showDetails}>
