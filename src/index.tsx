@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.Fragment>
     <Provider store={store}>
-      <BrowserRouter >
+      <BrowserRouter basename={'react-redux-toolkit'}>
         <App />
       </BrowserRouter>
     </Provider>

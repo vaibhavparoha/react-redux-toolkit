@@ -16,12 +16,12 @@ function App() {
       <div className='mt-20'>
         <Routes>
           <Route path='/' element={<ProductPage />} />
-          <Route path='/products' >
+          <Route path='products' >
             <Route index element={<ProductPage />} />
             <Route path=':id' element={<ProductDetailsPage />} />
             <Route path='category/:category' element={<ProductPage />} />
           </Route>
-          <Route path='/cart' element={<CartPage />} />
+          <Route path='cart' element={<CartPage />} />
         </Routes>
       </div>
     </div>
