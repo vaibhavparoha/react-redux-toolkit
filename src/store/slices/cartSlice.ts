@@ -22,17 +22,23 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action: PayloadAction<CardType>) => {
-            state.cartList?.push(action.payload)
+            state.cartList?.push({ ...action.payload, quantity: 1 })
         },
-        updateCart: (state, action: PayloadAction<CardType>) => {
-            state.cartList?.push(action.payload)
+        updateQuantity: (state, action: PayloadAction<{ id: number, quantity: number }>) => {
+            const index = state.cartList.findIndex((item: CardType) => item.id = action.payload.id);
+            state.cartList[index].quantity = action.payload.quantity
         },
+        deleteFromCart: (state, action: PayloadAction<number>) => {
+            const index = state.cartList.findIndex((item: CardType) => item.id = action.payload);
+            state.cartList.splice(index, 1);
+        }
     },
 })
 
 export const {
     addToCart,
-    updateCart
+    updateQuantity,
+    deleteFromCart
 } = cartSlice.actions
 
 export const getCartList = (state: RootState) => state.cart.cartList

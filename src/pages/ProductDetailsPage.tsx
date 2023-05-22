@@ -1,9 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from "react-router-dom";
+import { CardType, addToCart, getCartList } from '../store/slices/cartSlice';
 import { ProductType } from '../store/slices/productSlice';
-import { CardType, addToCart, getCartList, updateCart } from '../store/slices/cartSlice';
-import Cart from '../components/cart/Cart';
 
 type Props = {
 }

@@ -1,10 +1,19 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { setFilter } from '../../store/slices/productSlice';
 
 type Props = {}
 
 const itemsClass = 'hover:bg-slate-100 p-2 cursor-pointer'
 
 const Filter = (props: Props) => {
+
+    const dispatch = useDispatch();
+
+    dispatch(setFilter({
+        filterKey: 'size',
+        value: 'XL'
+    }))
     return (
         <div className='mr-5 font-poppins'>
             <div className='text-lg'>Filters</div>
