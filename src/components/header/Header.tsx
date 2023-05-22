@@ -26,7 +26,7 @@ const Header = (props: Props) => {
                 <Link to={'products/category/women\'s clothing'} >Women's clothing</Link>
 
             </nav>
-            <input type='text' className='rounded-lg h-9 w-80 px-2' placeholder='Search Product' />
+            <input type='text' className='rounded-lg h-9 w-80 px-2 !outline-none' placeholder='Search Product' />
             <div className='h-full flex items-center mx-10 basis-10 relative justify-between w-full space-x-3' >
                 <HeartIcon className="ml-3 h-6 w-6 text-red-500" />
                 <div className='cursor-pointer' onClick={() => navigate('/cart')}>

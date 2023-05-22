@@ -47,7 +47,7 @@ const ProductPage: React.FC<ProductPageProps> = (props) => {
       </aside>
       <div className='flex basis-3/4 flex-row justify-start sm:flex-wrap'>
         {products.map((product: ProductType, index: number) => {
-          return <Product {...product} />
+          return <Product key={index} {...product} />
         })}
       </div>
     </div>

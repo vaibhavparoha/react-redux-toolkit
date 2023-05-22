@@ -10,10 +10,12 @@ const Filter = (props: Props) => {
 
     const dispatch = useDispatch();
 
-    dispatch(setFilter({
-        filterKey: 'size',
-        value: 'XL'
-    }))
+    const handleFilter = () => {
+        dispatch(setFilter({
+            filterKey: 'size',
+            value: 'XL'
+        }))
+    }
     return (
         <div className='mr-5 font-poppins'>
             <div className='text-lg'>Filters</div>
